@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    auto label = new QLabel("UnClicked", this);
+    auto label = new QLabel(QString::number(i), this);
     label->setAlignment(Qt::AlignCenter);
     label->setStyleSheet("font-size: 21px;");
 
@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     central->setLayout(layout);
     setCentralWidget(central);
 
-    connect(btn, &QPushButton::clicked, this, [label] { label->setText("Clicked!"); });
+    connect(btn, &QPushButton::clicked, this, [this, label] { label->setText(QString::number(++(this->i))); });
 }
 
 MainWindow::~MainWindow()
