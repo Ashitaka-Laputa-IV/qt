@@ -14,9 +14,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     QVBoxLayout *layout = new QVBoxLayout(central);
 
-    layout->addWidget(new QLabel("Lable", central));
-    layout->addWidget(new QPushButton("ButtonA", central));
-    layout->addWidget(new QPushButton("ButtonB", central));
+    auto label = new QLabel("Lable", central);
+    label->setAlignment(Qt::AlignCenter);
+
+    auto btn_a = new QPushButton("ButtonA", central);
+    auto btn_b = new QPushButton("ButtonB", central);
+
+    layout->addWidget(label);
+    layout->addWidget(btn_a);
+    layout->addWidget(btn_b);
 
     layout->setAlignment(Qt::AlignCenter);
 
